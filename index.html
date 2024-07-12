@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+      body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        background-color: #1a1a1a;
+        color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .main {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(145deg, #1a1a1a, #333333);
+      }
+
+      .box {
+        height: 300px;
+        width: 300px;
+        background-color: #282828;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease;
+      }
+
+      .box:hover {
+        transform: scale(1.05);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 4rem;
+        color: #76c7c0;
+        transition: color 0.3s ease;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #76c7c0;
+        border: none;
+        border-radius: 5px;
+        color: #1a1a1a;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #64b2ad;
+        transform: translateY(-2px);
+      }
+
+      button:active {
+        transform: translateY(2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="box">
+        <h1 class="value">0</h1>
+        <button class="btn">Click</button>
+      </div>
+    </div>
+
+    <script>
+      let value = document.querySelector(".value");
+      let btn = document.querySelector(".btn");
+
+      let sum = 0;
+      btn.addEventListener("click", () => {
+        sum = sum + 1;
+        value.innerText = sum;
+      });
+    </script>
+  </body>
+</html>
